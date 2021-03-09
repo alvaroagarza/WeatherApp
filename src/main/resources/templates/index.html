@@ -47,7 +47,7 @@
     </thead>
     <tbody>
     <th:block th:object="${recentzips}">
-	<tr th:if="${recentzips == null}">
+	<tr th:if="${#lists.isEmpty(recentzips)}">
             <td colspan="2"> No ZIP codes searched for </td>
         </tr>
         <tr th:each="zip : ${recentzips}">

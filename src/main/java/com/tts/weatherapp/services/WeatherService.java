@@ -21,11 +21,12 @@ public class WeatherService {
 
     
     public Response getForecast(String zipCode) {
-    	createZip(zipCode);
+    	
         String url = "http://api.openweathermap.org/data/2.5/weather?zip=" + 
             zipCode + "&units=imperial&appid=" + apiKey;
         RestTemplate restTemplate = new RestTemplate();
         try {
+        	createZip(zipCode);
         return restTemplate.getForObject(url, Response.class);
         }
         catch (HttpClientErrorException ex) {
